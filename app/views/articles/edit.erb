@@ -1,0 +1,24 @@
+<%# #needs to make a form with all the info from
+#the article we want to update %>
+<%#this method is post even though we are patching - so we're spoofing%>
+  <form method="post" action="/articles/<%= @article.id %>">
+    <h1>Edit your article info: </h1>
+    <br />
+    <h2>Article: </h2>
+    <label> Article Title: </label>
+    <h2> <%= @article.title %></h2>
+    <input type="text" id="title" name="article[title]" value="<%= @article.title %>" />
+        
+        <br>
+        
+    <label> Article Content:</label>
+    <h2> <%= @article.content %></h2>
+    <input type="text" id="content" name="article[content]" value="<%= @article.content %>"/>
+   
+   <%# submits the form via a patch request: %>
+    <input id="hidden" type="hidden" name="_method" value="PATCH" />
+        <br /> 
+
+<button type="submit" id="id" value="submit">submit</button>
+
+  </form>

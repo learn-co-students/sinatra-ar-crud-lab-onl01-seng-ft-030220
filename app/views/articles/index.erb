@@ -1,0 +1,13 @@
+<h1>All Articles and Their Content</h1>
+     
+    <% @articles.each_with_index do |article, index| %>
+      <div class="article">
+      <p><%= index + 1 %><p>
+        <p>Title: <%= article.title %></p>
+        <br>
+        <p>Content: <%= article.content %></p>
+        <br>
+      </div><br>
+    <% end %>
+
+    </div><br>
